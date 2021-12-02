@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Events List</h1>
+    </header>
+    <div id="form-container">
+        <div class="row">
+            
+        </div>
+    </div>
+    <div id="container">
+        <div class="row">
+            <div class="heading col1">{{headings[0]}}</div>
+            <div class="heading col2">{{headings[1]}}</div>
+            <div class="heading col3">{{headings[2]}}</div>
+            <div class="heading col4">{{headings[3]}}</div>
+            <div class="heading col5">{{headings[4]}}</div>
+        </div>
+        <div class="row">
+            {% for event in events %}
+            <div class="col1">{{event.date}}</div>
+            <div class="col2">{{event.name_of_event}}</div>
+            <div class="col3">{{event.number_of_guests}}</div>
+            <div class="col4">{{event.location}}</div>
+            <div class="col5">{{event.description}}</div>
+            <br>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
