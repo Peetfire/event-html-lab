@@ -10,12 +10,12 @@ h1 {
 
 .row {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
 form {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
 input[type=text] {
@@ -42,6 +42,9 @@ input[type=text] {
     margin: 15px;
 }
 .col5 {
+    margin: 15px;
+}
+.col6 {
     margin: 15px;
 }
 

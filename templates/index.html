@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles.css') }}">
-    <title>Document</title>
+    <title>Events Site</title>
 </head>
 <body>
     <header>
@@ -16,7 +16,9 @@
         <form action="/events" method="post">
             <div class="form-item">
                 <label for="date">Date:</label>
-                <input type="text" name="date" id="date">
+                <input type="date" id="date" name="date"
+                value='<?php echo date('Y-m-d');?'
+                min="2021-01-01" max="2023-12-31">
             </div>
             <div class="form-item">
                 <label for="name_of_event">Name of Event:</label>
@@ -35,6 +37,10 @@
                 <input type="text" name="description" id="description">
             </div>
             <div class="form-item">
+                <label for="recurring">Recurring:</label>
+                <input type="checkbox" name="recurring" id="recurring">
+            </div>
+            <div class="form-item">
                 <input type="submit" value="Add Event">
             </div>
         </form>
@@ -46,6 +52,7 @@
             <div class="heading col3">{{headings[2]}}</div>
             <div class="heading col4">{{headings[3]}}</div>
             <div class="heading col5">{{headings[4]}}</div>
+            <div class="heading col6">{{headings[5]}}</div>
         </div>
         <div class="row">
             {% for event in events %}
@@ -54,6 +61,7 @@
             <div class="col3">{{event.number_of_guests}}</div>
             <div class="col4">{{event.room_location}}</div>
             <div class="col5">{{event.description}}</div>
+            <div class="col6">{{event.recurring}}</div>
             {% endfor %}
         </div>
     </div>

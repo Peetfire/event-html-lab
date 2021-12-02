@@ -15,6 +15,11 @@ def add_task():
     number_of_guests = request.form["number_of_guests"]
     room_location = request.form["room_location"]
     description = request.form["description"]
-    new_event = Event(date, name_of_event, number_of_guests, room_location, description)
+    result = request.form["recurring"]
+    if result == "on":
+        recurring = True
+    else:
+        recurring = False
+    new_event = Event(date, name_of_event, number_of_guests, room_location, description, recurring)
     add_new_event(new_event)
     return render_template('index.html', title="Home", events=events, headings=headings)
