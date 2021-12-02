@@ -4,40 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles.css') }}">
     <title>Document</title>
 </head>
 <body>
     <header>
         <h1>Events List</h1>
+        <hr>
     </header>
     <div id="form-container">
-        <div class="row">
-            <form action="/events" method="post">
-                <div class="form item">
-                    <label for="date">Date:</label>
-                    <input type="text" name="date" id="date">
-                </div>
-                <div class="form item">
-                    <label for="name_of_event">Name of Event:</label>
-                    <input type="text" name="name_of_event" id="name_of_event">
-                </div>
-                <div class="form item">
-                    <label for="number_of_guests">Number of Guests:</label>
-                    <input type="text" name="number_of_guests" id="number_of_guests">
-                </div>
-                <div class="form item">
-                    <label for="room_location">Room Location:</label>
-                    <input type="text" name="room_location" id="room_location">
-                </div>
-                <div class="form item">
-                    <label for="description">Description:</label>
-                    <input type="text" name="description" id="description">
-                </div>
-                <div class="form item">
-                    <input type="submit" value="Add Event">
-                </div>
-            </form>
-        </div>
+        <form action="/events" method="post">
+            <div class="form-item">
+                <label for="date">Date:</label>
+                <input type="text" name="date" id="date">
+            </div>
+            <div class="form-item">
+                <label for="name_of_event">Name of Event:</label>
+                <input type="text" name="name_of_event" id="name_of_event">
+            </div>
+            <div class="form-item">
+                <label for="number_of_guests">Number of Guests:</label>
+                <input type="text" name="number_of_guests" id="number_of_guests">
+            </div>
+            <div class="form-item">
+                <label for="room_location">Room Location:</label>
+                <input type="text" name="room_location" id="room_location">
+            </div>
+            <div class="form-item">
+                <label for="description">Description:</label>
+                <input type="text" name="description" id="description">
+            </div>
+            <div class="form-item">
+                <input type="submit" value="Add Event">
+            </div>
+        </form>
     </div>
     <div id="container">
         <div class="row">
@@ -52,9 +52,8 @@
             <div class="col1">{{event.date}}</div>
             <div class="col2">{{event.name_of_event}}</div>
             <div class="col3">{{event.number_of_guests}}</div>
-            <div class="col4">{{event.location}}</div>
+            <div class="col4">{{event.room_location}}</div>
             <div class="col5">{{event.description}}</div>
-            <br>
             {% endfor %}
         </div>
     </div>
